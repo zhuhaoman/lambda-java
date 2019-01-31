@@ -13,5 +13,6 @@ import lombok.Setter;
 public class Apple {
     private String color;
 
+    private Float weight;
 
 }
