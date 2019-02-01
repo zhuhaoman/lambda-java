@@ -65,5 +65,30 @@ public class StreamTest {
                 .collect(toList());
         System.out.println(names);
     }
+   @Test
+    public void test1() {
 
+        //构造函数
+
+        //无参
+        Supplier<Apple> a = Apple::new;
+        Apple apple1 = a.get();
+        System.out.println(apple1.toString());
+
+        //一个参数
+        Function<String,Apple> a1 = Apple::new;
+        Apple apple2 = a1.apply("red");
+        System.out.println(apple2.toString());
+
+        //两个参数
+        BiFunction<String,Integer,Apple> a2 = Apple::new;
+        Apple apple3 = a2.apply("green",123);
+        System.out.println(apple3.toString());
+    }
+
+    @Test
+    public void test2() {
+        Apple apple = getFruit("red",120);
+        System.out.println(apple.toString());
+    }
 }
