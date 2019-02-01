@@ -1,0 +1,29 @@
+package com.zhuhaoman.java8.utils;
+
+import com.zhuhaoman.java8.domain.Apple;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.function.Function;
+
+/**
+ * @ClassName FunctionInterfaceUtil
+ * @Description TODO
+ * @Author zhuhaoman
+ * @Date 2019/1/29 18:09
+ **/
+public class FunctionInterface {
+
+    private static Map<String, Function<Integer, Apple>> map = new HashMap<>();
+    static {
+        map.put("red",Apple::new);
+        map.put("green",Apple::new);
+        map.put("yellow",Apple::new);
+    }
+
+    public static Apple getFruit(String apple,Integer weight) {
+        return map.get(apple.toLowerCase()).apply(weight);
+    }
+
+
+}
